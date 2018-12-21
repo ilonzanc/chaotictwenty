@@ -1,0 +1,1 @@
+<p>&copy; <?php echo Configure::read('site.name') . ' ' . date("Y"); ?></p>

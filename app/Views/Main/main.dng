@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><?php echo Configure::read('site.name'); ?></title>
+        <?php echo $this->Html->favicon('favicon.ico'); ?>
+        <?php echo $this->Html->style('main'); ?>
+        <link href="https://fonts.googleapis.com/css?family=Hammersmith+One|Roboto" rel="stylesheet">
+    </head>
+    <body>
+        <?php $this->content(); ?>
+
+        <footer>
+            <?php echo $this->element('footer'); ?>
+        </footer>
+    </body>
+</html>

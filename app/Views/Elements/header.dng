@@ -1,0 +1,11 @@
+<div class="text">
+    <h1><?php echo __ss('home', '[home.title]'); ?></h1>
+    <h2><?php echo __ss('home', '[home.subtitle]'); ?></h2>
+</div>
+<nav>
+    <?php foreach ($menu as $item): ?>
+        <a href="<?php echo Route::link($item['link']); ?>">
+            <?php echo __ss($item['StaticString'][0]['scope'], $item['StaticString'][0]['string']); ?>
+        </a>
+    <?php endforeach ?>
+</nav>

@@ -1,0 +1,58 @@
+<?php if (isset($this->model->adminPaginate)) : ?>
+    <?php 
+        $sort = ((isset($_GET['sort'])) ? $_GET['sort'] : null);
+        $order = ((isset($_GET['order'])) ? $_GET['order'] : null);
+        $page = (isset($_GET['page']) ? $_GET['page'] : 1);
+        $pageAmount = $model->adminPaginate['pageAmount'];
+
+        $sortOrder = "";
+        if ($sort && $order)
+            $sortOrder = "&sort=" . $sort . "&order=" . $order;
+        else if ($sort && !$order)
+            $sortOrder = "&sort=" . $sort;
+        else if (!$sort && $order)
+            $sortOrder = "&order=" . $order;
+    ?>
+    <ul class="admin--pagination">
+        <?php if ($page != 1) : ?>
+            <li>
+                <a class="button" href="<?php echo Route::link('/admin/' . $model->tablename . '?page=1' . $sortOrder) ?>">
+                    <<
+                </a>
+            </li>
+        <?php endif; ?>
+
+        <?php if ($page != 1) : ?>
+            <li>
+                <a class="button" href="<?php echo Route::link('/admin/' . $model->tablename . '?page=' . ($page - 1) . $sortOrder) ?>">
+                    <
+                </a>
+            </li>
+        <?php endif; ?>
+
+        <?php for ($i = 1; $i <= $pageAmount; $i++) : ?>
+            <li>
+                <a class="<?php echo (($page == $i) ? 'active' : '') ?> button" href="<?php echo Route::link('/admin/' . $model->tablename . '?page=' . $i . $sortOrder) ?>">
+                    <?php echo $i ?>
+                </a>
+            </li>
+        <?php endfor; ?>
+
+        <?php if ($page != $pageAmount) : ?>
+            <li>
+                <a class="button" href="<?php echo Route::link('/admin/' . $model->tablename . '?page=' . ($page + 1) . $sortOrder) ?>">
+                    >
+                </a>
+            </li>
+        <?php endif; ?>
+
+        <?php if ($page != $pageAmount) : ?>
+            <li>
+                <a class="button" href="<?php echo Route::link('/admin/' . $model->tablename . '?page=' . $pageAmount . $sortOrder) ?>">
+                    >>
+                </a>
+            </li>
+        <?php endif; ?>
+
+    </ul>
+<?php endif; ?>

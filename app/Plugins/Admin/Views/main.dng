@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><?php echo Configure::read('site.name'); ?> | Admin</title>
+        <?php echo $this->Html->favicon('favicon.ico'); ?>
+        <?php echo $this->Html->style('main'); ?>
+        <?php echo $this->Html->style('admin'); ?>
+        <link href="https://fonts.googleapis.com/css?family=Hammersmith+One|Roboto" rel="stylesheet">
+        <script src="https://use.fontawesome.com/b42362407e.js"></script>
+    </head>
+    <body>
+        <div class="admin">
+            <?php if (isset($_SESSION['DTWENTY'])) : ?>
+                <div class="admin--loggedin">
+                    <h4>Welcome back <?php echo $_SESSION['DTWENTY']['user_name']; ?></h4>
+                    <a class="button" href="<?php echo Route::link('/admin/logout'); ?>">Logout</a>
+                </div>
+                <nav>
+                    <h1>
+                        <a href="<?php echo Route::link('/'); ?>">
+                            <?php echo Configure::read('site.name'); ?>
+                        </a>
+                    </h1>
+                    <?php
+                        $this->element(
+                            'navigation',
+                            array(
+                                'currentTable' => $this->currentTable
+                            ),
+                            'Admin'
+                        );
+                    ?>
+                </nav>
+            <?php endif; ?>
+            <main>
+                <?php $this->content(); ?>
+            </main>
+        </div>
+    </body>
+</html>

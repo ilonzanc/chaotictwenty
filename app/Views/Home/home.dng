@@ -1,0 +1,8 @@
+<header>
+    <?php echo $this->element('header', array('menu' => $this->menu)) ?>
+</header>
+
+
+<main>
+    <p>Welcome to Chaotic20</p>
+</main>
