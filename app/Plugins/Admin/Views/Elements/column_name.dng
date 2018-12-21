@@ -1,0 +1,10 @@
+<?php
+
+if (strpos($field['human'], ' Id'))
+{
+    $field['human'] = str_replace(' Id', '', $field['human']);
+}
+
+echo $field['human'];
+
+?>

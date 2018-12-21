@@ -1,0 +1,42 @@
+<h3 class="line">Editing <?php echo $this->model->labels['name']; ?></h3>
+
+<?php if (isset($this->errors)) : ?>
+    <ul style='color: red;'>
+    <?php foreach ($this->errors as $error): ?>
+        <li><?php echo $error; ?></li>
+    <?php endforeach ?>
+    </ul>
+<?php endif; ?>
+
+<?php echo $this->Form->start(array('method' => 'post')); ?>
+<table class="admin--fields">
+    <thead>
+        <td>Key</td>
+        <td>Value</td>
+    </thead>
+    <?php foreach ($this->model->fields as $key => $value) : ?>
+        <?php if ($key == 'id') : ?>
+        <tr>
+            <td>
+                <?php echo $this->Form->label($key, ucfirst(str_replace('_id', '', $key))); ?>
+            </td>
+            <td>
+                <?php echo $this->data[$key]; ?>
+            </td>
+        </tr>
+        <?php else : ?>
+        <tr>
+            <td>
+                <?php echo $this->Form->label($key, ucfirst(str_replace('_id', '', $key))); ?>
+            </td>
+            <td>
+                <?php echo $this->Field->field($this->model, $key, $this->data[$key], $key); ?>
+            </td>
+        </tr>
+        <?php endif ?>
+    <?php endforeach; ?>
+    <tr>
+        <td colspan="2"><?php echo $this->Form->submit(); ?></td>
+    </tr>
+</table>
+<?php echo $this->Form->end(); ?>

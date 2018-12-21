@@ -1,0 +1,251 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Hammersmith One", sans-serif;
+}
+
+p, a, li {
+  font-family: "Roboto", sans-serif;
+}
+
+.admin {
+  overflow: auto;
+  background: #222;
+  min-height: 100vh;
+}
+.admin * {
+  box-sizing: border-box;
+}
+.admin .button {
+  padding: 6px 10px 4px;
+  text-decoration: none;
+  border: 2px solid #d068e2;
+  color: #d068e2;
+  font-family: "Hammersmith One", sans-serif;
+  display: inline-block;
+}
+.admin .button:hover {
+  background: #d068e2;
+  color: black;
+}
+.admin .button-icon {
+  border: 0;
+  font-size: 1.5rem;
+  padding: 0 10px;
+  margin-top: -4px;
+}
+.admin .button-icon:hover {
+  background: none;
+  color: black;
+}
+.admin--text {
+  width: 100%;
+  overflow: auto;
+  margin-bottom: 10px;
+}
+.admin--text p {
+  color: black;
+}
+.admin--text--info {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.admin--text--buttons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+.admin--text--buttons .button {
+  margin-right: 10px;
+}
+.admin--loggedin {
+  float: right;
+  width: calc(100% - 300px);
+  background: #111;
+  overflow: auto;
+}
+.admin--loggedin h4 {
+  padding: 18px;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.5);
+  float: left;
+}
+.admin--loggedin a {
+  float: right;
+  margin: 15px 10px;
+}
+.admin form label, .admin form input, .admin form textarea, .admin form select {
+  font-size: 1rem;
+  padding: 5px;
+}
+.admin form label {
+  display: inline-block;
+  width: 150px;
+}
+.admin form input, .admin form textarea {
+  width: 50%;
+}
+.admin form input[type=checkbox] {
+  width: auto;
+}
+.admin form .admin--manytomany {
+  width: calc(100% - 150px);
+  float: right;
+}
+.admin form select {
+  min-width: 30%;
+  margin-bottom: 5px;
+}
+.admin form .js-image--preview {
+  width: 50px;
+  height: 50px;
+  margin: 5px 0 10px 154px;
+  background-color: black;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.admin form input[type=submit] {
+  width: auto;
+  padding: 6px 20px 4px;
+  text-decoration: none;
+  border: 2px solid #d068e2;
+  color: #d068e2;
+  font-family: "Hammersmith One", sans-serif;
+  display: inline-block;
+  background: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.admin form input[type=submit]:hover {
+  background: #d068e2;
+  color: black;
+}
+.admin table {
+  background: white;
+  min-width: 100%;
+}
+.admin table thead td,
+.admin table tr td {
+  vertical-align: top;
+  padding: 5px 10px;
+}
+.admin table thead td img,
+.admin table tr td img {
+  width: 100px;
+}
+.admin table thead td span.tinyint,
+.admin table tr td span.tinyint {
+  display: inline-block;
+  padding: 2px 10px 1px;
+  font-weight: bold;
+  color: white;
+}
+.admin table thead td span.tinyint--true,
+.admin table tr td span.tinyint--true {
+  background: #05b914;
+}
+.admin table thead td span.tinyint--false,
+.admin table tr td span.tinyint--false {
+  background: #b90505;
+}
+.admin table thead td td.icons,
+.admin table tr td td.icons {
+  width: 153px;
+}
+.admin table thead {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+.admin table thead a {
+  color: white;
+  display: inline-block;
+  width: 100%;
+}
+.admin table tr:nth-of-type(2n) {
+  background: rgba(0, 0, 0, 0.1);
+}
+.admin table.admin--fields tr:nth-of-type(2n) {
+  background: none;
+}
+.admin table.admin--fields td:first-of-type {
+  width: 200px;
+}
+.admin main {
+  float: right;
+  padding: 20px;
+  margin: 20px;
+  width: calc(100% - 340px);
+  background: white;
+  overflow: auto;
+}
+.admin main h3 {
+  color: black;
+}
+.admin nav {
+  overflow-y: auto;
+  position: fixed;
+  width: 300px;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+}
+.admin nav h1 a {
+  display: block;
+  font-size: 3rem;
+  color: white;
+  background: #111;
+  text-align: center;
+  padding: 40px 20px;
+  line-height: 120%;
+  text-decoration: none;
+}
+.admin nav ul.closed {
+  height: 58px;
+}
+.admin nav ul {
+  overflow: hidden;
+}
+.admin nav ul li.nav--subheader {
+  color: #d068e2;
+  padding: 10px;
+  font-size: 1.4rem;
+}
+.admin nav ul li a {
+  display: block;
+  padding: 7px 10px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: white;
+}
+.admin nav ul li a:hover {
+  background: rgba(208, 104, 226, 0.1);
+}
+.admin nav ul li a.active {
+  background: rgba(208, 104, 226, 0.2);
+}
+.admin nav ul li li a {
+  padding-left: 15px;
+}
+.admin ul.admin--pagination {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  float: right;
+  display: flex;
+  justify-content: flex-end;
+}
+.admin ul.admin--pagination li {
+  display: inline-block;
+  margin-left: 5px;
+}
+.admin ul.admin--pagination li a {
+  display: inline-block;
+  padding: 5px 10px 3px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+.admin ul.admin--pagination li a.active {
+  background: #d068e2;
+  color: black;
+}
+
+/*# sourceMappingURL=admin.css.map */
