@@ -1,7 +1,0 @@
-<div class="admin--text">
-    <h3 class="line">Deleting <?php echo $this->model->name; ?> <?php echo $this->data['id']; ?></h3>
-    <p>Are you sure?</p>
-
-    <a class="button" href="<?php echo Route::link('/admin/' . $this->model->tablename . '/' . $this->data['id'] . '/delete?confirm=1'); ?>">Yes</a>
-    <a class="button" href="<?php echo Route::link('/admin/' . $this->model->tablename); ?>">No</a>
-</div>
