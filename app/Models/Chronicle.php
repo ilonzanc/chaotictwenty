@@ -14,6 +14,8 @@ class Chronicle extends AdminModel
 
     public $adminFields = array(
         'media_id' => array('type' => 'Media'),
+        'teaser' => array('type' => 'Textarea'),
+        'body' => array('type' => 'Textarea'),
     );
 
     public $relations = array(
